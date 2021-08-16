@@ -10,4 +10,5 @@ public class TheatreEventsMsApplication {
         SpringApplication.run(TheatreEventsMsApplication.class, args);
     }
 
+
 }
