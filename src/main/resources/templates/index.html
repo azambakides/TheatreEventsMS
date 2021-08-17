@@ -20,19 +20,18 @@
         <thead>
         <tr>
             <th>Show Name</th>
-            <th>Show Date</th>
-            <th>Show Time</th>
-            <th>Price</th>
+<!--            <th>Show Date</th>-->
+<!--            <th>Show Time</th>-->
+<!--            <th>Price</th>-->
         </tr>
         </thead>
         <tbody>
         <tr th:each="show : ${showList}">
             <td th:text="${show.showName}"></td>
-            <td th:text="${show.showDate}"></td>
-            <td th:text="${show.showTime}"></td>
-            <td th:text="${show.price}"></td>
-            <td> <a th:href="@{/updateShow/{id}(id=${show.id})}" class="btn btn-primary">Update</a>
-                <a th:href="@{/deleteShow/{id}(id=${show.id})}" class="btn btn-danger">Delete</a>
+<!--            <td th:text="${show.showDate}"></td>-->
+<!--            <td th:text="${show.showTime}"></td>-->
+<!--            <td th:text="${show.price}"></td>-->
+            <td> <a th:href="@{/selectShow/{id}(id=${show.id})}" class="btn btn-primary">Select Show</a>
             </td>
         </tr>
         </tbody>

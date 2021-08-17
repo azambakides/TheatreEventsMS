@@ -13,6 +13,13 @@ public class Show {
     private String showTime;
     private double price;
 
+    public Show() {
+
+    }
+
+    public Show(long id, String showName, String showDate, String showTime, double price) {
+    }
+
 
     public Long getId() {
         return id;
