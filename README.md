@@ -27,13 +27,17 @@ The target audience of this app are fans and lovers of art and culture, who want
 ## The Visualisation
 
 ---
-![SpringBootDesign](SpringBootDesign.png)
+![sketchMS](src/main/resources/img/sketchMS.png)
 
-To assist myself with a visual aim of how the front-end will look for the user, I created a design in [Canva](https://www.canva.com/), which helped the creative process of this SpringBoot application.
+This was my initial sketch that began my visualisation.
 
-I had a visualisation of the theatre curtains, and a welcome message displayed on the top with the app name. Underneath, there is a UI-term of a hamburger menu with four separate drop-down choice, which also accepts user input. The show details are finalised in the last one.
+I had an initial visualisation of the theatre curtains, and a welcome message displayed on the top with the app name. Underneath, there is a UI-term of a hamburger menu with four separate drop-down choice, which also accepts user input. The show details are finalised in the last one.
 
-I also would like an option for the user if they do not find the show they want, so they can look at a list of shows available. The feature for this could not fit onto my PNG, unfortunately.
+I also wanted an option to be available for the user if they do not find the show they want, so they can look at a list of shows available.
+
+![SpringBootDesign](src/main/resources/img/SpringBootDesign.png)
+
+To assist myself with a visual aim of how the front-end will look for the user, I created a design in [Canva](https://www.canva.com/), which helped to kickstart the creative process of this SpringBoot application.
 
 ## Features
 
@@ -59,4 +63,6 @@ The features of the Microservice is so that users can select their show by a ham
 | 8 | Add PNG of visualisation to the file, and embed under the Visualisation heading, continuing updating README.md with text on Statement of Purpose, Features, and Visualisation | README.md | Use the correct headings, bold text, embedding, tables, and links |
 |9|Give endpoint a name for direction | |http://localhost:8081/TheatreEvents |
 | 10| Make the end point only display show name first and a select button and a separate page to display all show details when user selects a show name | Added a second @GetMapping in ShowController for show details and showDetails.html for the show details | Primitive at this stage, but will think on how to do the design - only three shows displaying too |
-|11| Add photo of front-end sketch to show mental journey of visual plan| |
+|11| Revert to previous idea of show details displaying on second page after user clicking "select show" and decided to keep all show details on landing page instead | index.html,  |  |
+|12| Begin designing the landing page of show details | index.html, Bootstrap, CSS | Imported an image of the same blue theatre curtains in the Visualisation into newly made img directory, and tried to link it to index.html |
+|13| Add photo of front-end sketch to show mental journey of visual plan| | Import to img folder as png, along with the Canva design
