@@ -6,36 +6,59 @@
     <title>Theatre Events System</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Roboto&display=swap" rel="stylesheet">
 
+
+    <style>
+        h1 {
+            text-align: center;
+            font-family: 'Alfa Slab One', cursive;
+        }
+
+
+        h2 {
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            margin-bottom: 5%;
+        }
+
+        td,tr {
+            font-family: 'Roboto', sans-serif;
+        }
+
+    </style>
 </head>
 
 <body>
 
 <div class="container my-2">
-    <h1>Show List</h1>
+    <h1>Theatre Events</h1>
+    <h2>Welcome! Please choose a show: </h2>
 
-    <a th:href="@{/addShow}" class="btn btn-primary btn-sm mb-3"> Add Show </a>
 
-    <table border="1" class="table table-striped table-responsive-md">
+    <table border="1" class="table table-responsive-md">
         <thead>
         <tr>
             <th>Show Name</th>
-<!--            <th>Show Date</th>-->
-<!--            <th>Show Time</th>-->
-<!--            <th>Price</th>-->
+            <th>Show Date</th>
+            <th>Show Time</th>
+            <th>Price in $</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="show : ${showList}">
             <td th:text="${show.showName}"></td>
-<!--            <td th:text="${show.showDate}"></td>-->
-<!--            <td th:text="${show.showTime}"></td>-->
-<!--            <td th:text="${show.price}"></td>-->
+            <td th:text="${show.showDate}"></td>
+            <td th:text="${show.showTime}"></td>
+            <td th:text="${show.price}"></td>
             <td> <a th:href="@{/selectShow/{id}(id=${show.id})}" class="btn btn-primary">Select Show</a>
             </td>
         </tr>
         </tbody>
     </table>
+    <a th:href="@{/addShow}" class="btn btn-primary btn-sm mb-3"> Back </a>
 </div>
 </body>
 
