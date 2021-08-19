@@ -5,16 +5,16 @@ A Theatre Events Microservice (MS) that is based on the Command Line APP that wa
 
 **The Inspiration:**
 
-The inspiration for this app came to me in the shower after I had seen The Game Plan that starred Dwayne "The Rock" Johnson. In one scene, he danced a beautiful ballet with Roselyn Sanche. This made me realise how much I miss the theatre, and I thought something theatre related would be suitable for the Command Line Application that I created in Part A, and I feel it would be valuable as a Microservice in Part B too.
+The inspiration for this topic came to me when in the shower after I had seen The Game Plan that starred Dwayne "The Rock" Johnson. In one scene, he danced a beautiful ballet with Roselyn Sanche. This made me realise how much I miss the theatre, and I thought something theatre related would be suitable for the Command Line Application that I created in Part A, and I feel it would be valuable as a Microservice in Part B too.
 
 ## Statement of Purpose
 
 ---
 **What this microservice will do:**
 
-The aim of this microservice is to create a front-end Theatre Events webpage that enables user interaction, so that a user can search for, and choose a theatre show, easily and simply.
+The aim of this microservice is to create a front-end Theatre Events webpage that enables user interaction, so that a user can choose a theatre show easily and simply.
 
-Details of the show will be stored in the backend database...
+Details of the show will be stored in the backend database and linked to the front-end display.
 
 **What business problem it addresses:**
 
@@ -31,22 +31,28 @@ The target audience of this app are fans and lovers of art and culture, who want
 
 This was my initial sketch that began my visualisation.
 
-I had an initial visualisation of the theatre curtains, and a welcome message displayed on the top with the app name. Underneath, there is a UI-term of a hamburger menu with four separate drop-down choice, which also accepts user input. The show details are finalised in the last one.
+I had an initial visualisation of the theatre curtains, and a welcome message displayed on the top with the app name. Underneath, I wanted there to be a UI-term of a hamburger menu with four separate drop-down choice of:
 
-I also wanted an option to be available for the user if they do not find the show they want, so they can look at a list of shows available.
+1. Show name
+2. Show date
+3. Show time
+4. Finalised details with the price
+
+I also wanted an option underneath for the user if they do not find the show they want, so they can look at a list of shows available.
 
 ![SpringBootDesign](src/main/resources/img/SpringBootDesign.png)
 
 To assist myself with a visual aim of how the front-end will look for the user, I created a design in [Canva](https://www.canva.com/), which helped to kickstart the creative process of this SpringBoot application.
 
+However, the creative process changed with how I visualised the microservice to be like to how I was able to implement it with my skills. Instead, I used a table to list my shows, which the user could select from.
+
 ## Features
 
 ---
-The features of the Microservice is so that users can select their show by a hamburger menu of four separate drop-down choice, which also accepts user input:
-1. Show name
-2. Show date
-3. Show time
-4. Finalised details with the price 
+1. H2 database hold the data of the shows
+2. Hover table of choice of shows
+3. Button to select the show
+4. Once show is selected, the user is taken to another page that displays a departing message and the show details
 
 ## Implementation Plan
 
@@ -65,4 +71,5 @@ The features of the Microservice is so that users can select their show by a ham
 | 10| Make the end point only display show name first and a select button and a separate page to display all show details when user selects a show name | Added a second @GetMapping in ShowController for show details and showDetails.html for the show details | Primitive at this stage, but will think on how to do the design - only three shows displaying too |
 |11| Revert to previous idea of show details displaying on second page after user clicking "select show" and decided to keep all show details on landing page instead | index.html,  |  |
 |12| Begin designing the landing page of show details | index.html, Bootstrap, CSS | Imported an image of the same blue theatre curtains in the Visualisation into newly made img directory, and tried to link it to index.html |
-|13| Add photo of front-end sketch to show mental journey of visual plan| | Import to img folder as png, along with the Canva design
+|13| Add photo of the initial front-end sketch to show mental journey of visual plan| | Import to img folder as png, along with the Canva design |
+|14| Add the background image and CSS to index.html file | index.html, CSS, Bootstrap, HTML | URL image was linked directly to theatre curtains on Pixabay, instead of the .png in the img folder
