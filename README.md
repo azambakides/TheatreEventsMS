@@ -7,12 +7,23 @@ A Theatre Events Microservice (MS) that is based on the Command Line APP that wa
 
 The inspiration for this topic came to me when in the shower after I had seen The Game Plan that starred Dwayne "The Rock" Johnson. In one scene, he danced a beautiful ballet with Roselyn Sanche. This made me realise how much I miss the theatre, and I thought something theatre related would be suitable for the Command Line Application that I created in Part A, and I feel it would be valuable as a Microservice in Part B too.
 
+## Requirement and Planning
+
+---
+For this microservice to work, these are the requirements that are needed:
+
+- IntelliJ IDEA IDE
+- JDK 1.8
+- Maven Dependencies
+- H2 Database
+- JUnit Dependency
+
 ## Statement of Purpose
 
 ---
 **What this microservice will do:**
 
-The aim of this microservice is to create a front-end Theatre Events webpage that enables user interaction, so that a user can choose a theatre show easily and simply.
+The aim of this microservice is to create a front-end Theatre Events webpage that enables user interaction, so that a user can select a theatre show easily and simply.
 
 Details of the show will be stored in the backend database and linked to the front-end display.
 
@@ -59,7 +70,7 @@ However, the creative process changed with how I visualised the microservice to 
 ---
 |Step| Process or Task | Members | Comments |
 |----|-----------------|---------|----------|
-|1   | Create files and repository direct from IntelliJ IDEA after setting up "New Project" with Spring Initializer using Maven, and create a README.md from scratch | .gitnore, .mvn/wrapper, README.md, mvnw, pom.xml, application.properties, TheatreEventsApplicationTests | Chose dependencies of Spring Web, H2, and JPA |
+|1   | Create files and repository direct from IntelliJ IDEA after setting up "New Project" with Spring Initializer using Maven, and create a README.md from scratch | .gitnore, .mvn/wrapper, README.md, mvnw, pom.xml, application.properties, TheatreEventsApplicationTests | Chose the dependencies of Spring Web, H2, and JPA, so that the microservice will be a Spring app connecting to the Database |
 |2 | Double-check dependencies and add any new ones, if needed | pom.xml | Added the Thymeleaf dependency |
 |3 | Create the Model and add @Entity to store objects to the database with Model and Repository packages, new information in README.md | Show.java (@Id, @GeneratedValue, Getters/Setters), showRepository (@Repository), application.properties (setting up h2 database) index.html (Thymeleaf), TheatreEventsApplication.java (@public static main) | Store list of shows with dates, times, price and store the user inputs | 
 | 4 | Create a Controller in the Controller package | Controller: ShowController.java (@Controller, @GetMapping) | Make a simple endpoint to start with http://localhost:8081/ and a database with http://localhost:8081/h2-console/|
@@ -71,5 +82,6 @@ However, the creative process changed with how I visualised the microservice to 
 | 10| Make the end point only display show name first and a select button and a separate page to display all show details when user selects a show name | Added a second @GetMapping in ShowController for show details and showDetails.html for the show details | Primitive at this stage, but will think on how to do the design - only three shows displaying too |
 |11| Revert to previous idea of show details displaying on second page after user clicking "select show" and decided to keep all show details on landing page instead | index.html,  |  |
 |12| Begin designing the landing page of show details | index.html, Bootstrap, CSS | Imported an image of the same blue theatre curtains in the Visualisation into newly made img directory, and tried to link it to index.html |
-|13| Add photo of the initial front-end sketch to show mental journey of visual plan| | Import to img folder as png, along with the Canva design |
-|14| Add the background image and CSS to index.html file | index.html, CSS, Bootstrap, HTML | URL image was linked directly to theatre curtains on Pixabay, instead of the .png in the img folder
+|13| Add photo of the initial front-end sketch to demonstrate mental journey of visual plan| | Import to img folder as png, along with the Canva design |
+|14| Add the background image and CSS to index.html file | index.html, CSS, Bootstrap, HTML | URL image was linked directly to theatre curtains on Pixabay, instead of the .png in the img folder |
+|15| Create a ShowService class, and ShowServiceImpl and include methods and functions so that it connects the user interaction back to the database | Service: ShowService and ShowServiceImpl | 
