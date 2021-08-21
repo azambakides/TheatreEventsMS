@@ -10,13 +10,19 @@ The inspiration for this topic came to me when in the shower after I had seen Th
 ## Requirement and Planning
 
 ---
-For this microservice to work, these are the requirements that are needed:
+For Part B of the Capstone Project, these are the requirements that are needed, and I am using to ensure a working microservice :
 
-- IntelliJ IDEA IDE
-- JDK 1.8
-- Maven Dependencies
-- H2 Database
-- JUnit Dependency
+* **IntelliJ IDEA IDE**
+  * After working with Eclipse for most of the internship, I had decided to switch over to IntellJ IDEA because it is the preferred IDE of Macquarie. Furthermore, I wanted to ensure that my Microservice has no problems running between mine and the project marker's IDE.
+* **Java Development Kit (JDK) 1.8**
+    * So far in the course, we had been focusing on JDK 1.8. Therefore, I chose this for the project to ensure that the Microservice will run as I know how.
+* **Maven Dependencies**
+  * Spring Web (Web): _chosen for the ability to build web applications using Spring MVC_
+  * H2 Database (SQL): _a fast in-memory database that supports JDBC API and R2DBC access with a small footprint_
+  * Spring Data JPA (SQL): _persists data inSQL stores with Java Persistence API using Spring Data and Hibernate_
+  * Thymeleaf (Template Engines):_Java template for web environment using Bootstrap, HTML, and CSS_
+* **JUnit Maven Dependency**
+  * Testing framework used for Java projects for Unit Testing purposes, which we have been using in this course, and this time it has a Maven dependency
 
 ## Statement of Purpose
 
@@ -35,14 +41,24 @@ The web page addresses the problem where a user may scroll through a long list o
 
 The target audience of this app are fans and lovers of art and culture, who want a simple and easy way to search for a show that will be part of their next cultured trip.
 
-## The Visualisation
+## Features
+
+---
+These are the features of the Microservice:
+
+1. H2 database hold the data of the shows
+2. Hover table of choice of shows
+3. Button to select the show
+4. Once show is selected, the user is taken to another page that displays a departing message and the show details
+
+## Implementation Plan - Part A: Design
 
 ---
 ![sketchMS](src/main/resources/img/sketchMS.png)
 
-This was my initial sketch that began my visualisation.
+This was my initial wireframe (aka sketch) that began my visualisation.
 
-I had an initial visualisation of the theatre curtains, and a welcome message displayed on the top with the app name. Underneath, I wanted there to be a UI-term of a hamburger menu with four separate drop-down choice of:
+I had a vision of the theatre curtains, and a welcome message displayed on the top with the app name. Underneath, I wanted there to be a UI-term of a hamburger menu with four separate drop-down choice of:
 
 1. Show name
 2. Show date
@@ -57,15 +73,7 @@ To assist myself with a visual aim of how the front-end will look for the user, 
 
 However, the creative process changed with how I visualised the microservice to be like to how I was able to implement it with my skills. Instead, I used a table to list my shows, which the user could select from.
 
-## Features
-
----
-1. H2 database hold the data of the shows
-2. Hover table of choice of shows
-3. Button to select the show
-4. Once show is selected, the user is taken to another page that displays a departing message and the show details
-
-## Implementation Plan
+## Implementation Plan - Part B: Programming
 
 ---
 |Step| Process or Task | Members | Comments |
@@ -85,3 +93,5 @@ However, the creative process changed with how I visualised the microservice to 
 |13| Add photo of the initial front-end sketch to demonstrate mental journey of visual plan| | Import to img folder as png, along with the Canva design |
 |14| Add the background image and CSS to index.html file | index.html, CSS, Bootstrap, HTML | URL image was linked directly to theatre curtains on Pixabay, instead of the .png in the img folder |
 |15| Create a ShowService class, and ShowServiceImpl and include methods and functions so that it connects the user interaction back to the database | Service: ShowService and ShowServiceImpl | 
+| 16 | Create a requestShow.html, so that users can request a show via a user input form. Add @GetMapping and @PostMapping to the ShowController for requestShow, so that every time the input goes through, it connects back to the database and logs the requested show details | ShowController: @GetMapping, @PostMapping; requestShow.html| |
+| 17 | Ensure all pages are consistent in design |||
