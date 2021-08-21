@@ -66,11 +66,12 @@
                        class="form-control"/>
             </div>
             <div class="form-group">
-                <label for="price">Proposed Price</label>
+                <label for="price">Proposed Price in $</label>
                 <input id="price" placeholder="Enter Ideal Price" required type="text" th:field="*{price}"
                        class="form-control"/>
             </div>
             <input type="submit" style="background-color: darkgoldenrod; border-color: darkgoldenrod; font-weight: bold;" class="btn btn-primary" value="Submit Show">
         </form>
+    <div class="text-center"><a style="background-color: darkgoldenrod; border-color: darkgoldenrod; font-weight: bold" th:href="@{/TheatreEvents/}" class="btn btn-primary">Back</a></div>
     </body>
 </html>
