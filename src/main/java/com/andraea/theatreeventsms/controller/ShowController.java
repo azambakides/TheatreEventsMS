@@ -33,9 +33,16 @@ public class ShowController {
         return "showDetails";
     }
 
-    @PostMapping("/addShow")
-    public String showSubmit(@ModelAttribute Show show) {
+    @GetMapping("/requestShow")
+    public String loadRequestShow(Model model) {
+        model.addAttribute("show", new Show());
+        return "requestShow";
+    }
+
+    @PostMapping("/requestShow")
+    public String showSubmit(Model model, @ModelAttribute Show show) {
         showService.saveOrUpdate(show);
+        model.addAttribute("showList", showRepository.findAll());
         return "index";
     }
 }
