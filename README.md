@@ -61,9 +61,9 @@ For Part B of the Capstone Project, I learnt that these are the requirements are
 
 
    * Link with Repository interface (ShowRepository), so it stores objects to the database that extends _JPARepository_ of Show and Long (id)
-   * Create the Controller class (ShowController) with `@Controller` `@GetMapping` of _TheatreEvents_ and _SelectShow_
+   * Create the Controller class (ShowController) with `@Controller` `@GetMapping` of _TheatreEvents_ and _SelectShow_ to map the Thymeleaf templates
    * Set up the H2 Database in the application.properties and Make a simple endpoint to start with http://localhost:8081/ and a database with http://localhost:8081/h2-console/
-   * Create a Thymeleaf template with `index.html`, which allows endpoint to display with table of Show Name, Show Date, Show Time, and Price
+   * Create a Thymeleaf template with `index.html`, which allows endpoint to display with table of Show Name, Show Date, Show Time, and Price, which will be mapped by Controller
    * Think about what should be stored in the H2 Database: a list of shows with time, date, and price?
 
 **Tuesday**
@@ -104,15 +104,15 @@ For Part B of the Capstone Project, I learnt that these are the requirements are
 ---
 **What this Microservice will do:**
 
-The purpose of this MS is to create an H2 Database that will store a list of shows with their details of name, date, time, and price. This list will be sent to display in a user-friendly, and visually-pleasing, front-end Theatre Events webpage that enables user interaction. With the front-end webpage, the user can select one of the theatre shows from the list with ease. 
+The aim of this MS app is to create an SpringBoot application that will store a list of shows with their details of name, date, time, and price in an H2 Database. This list will be sent to display in a user-friendly, and visually-pleasing, Spring Web front-end Theatre Events webpage that enables user interaction with good User Experience (US). With the front-end webpage, the user can select one of the theatre shows from the list with ease. 
 
 Differing from Part A of this project, instead of being given a list of the available shows when the one the user wishes to see is not available, the user will be able to request a show instead with the proposed show name, with their ideal date, time, and price. This information will be sent back to the H2 Database for storage and will be displayed on the main page, joining the list of already-lined up shows.
 
 **What business problem it addresses:**
 
-The MS addresses the business problem of users of scrolling down a long-list of a drop-down menu, which can be tiresome and frustrating. With this MS webpage, the user can just select from a ready-prepared list of shows that are simply displayed on the homepage with the "Select Show" that is available after Number of Show, Show Name, Show Date, Show Time, and Price. 
+The MS addresses the business problem of users of scrolling down a long-list of a drop-down menu, which can be tiresome and frustrating. With this MS webpage, the user can just select from a ready-prepared list of shows that are simply displayed on the homepage, and can easily access the "Select Show" button on the far right, which is available after Number of Show, Show Name, Show Date, Show Time, and Price. 
 
-As an extra bonus with this website, users can request a show that they may be interested in, thus inputting a proposed show with an ideal time, date, and a price they would be willing to pay. This is different for usual theatre websites, which often just requires the user to choose only shows that are available already. Therefore, it provides a new Unique Selling Point (USP) and fills a gap in the market. A feature like this will make the user feel excited and more empowered about their position of consumerism.
+As an extra bonus with this website, users can request a show that they may be interested in, thus inputting a proposed show with an ideal time, date, and a price they would be willing to pay. This is different for usual theatre websites, which often just requires the user to choose only shows that are available already. Therefore, it provides a new Unique Selling Point (USP) and fills a gap in the market. A feature like this will make the user feel excited and more empowered about their position of consumerism. Users can request a show on the Request Show page that they can access by clicking on the "Request Show" button on the bottom of the landing page, underneath the list of shows.
 
 **The target audience**
 
@@ -121,12 +121,15 @@ The target audience of this MS are culture-lovers and fans of theatre, who make 
 ## Features
 
 ---
-These are the features of the Microservice:
+These are the features of the Theatre Events MS:
 
-1. H2 database hold the data of the shows
-2. Hover table of choice of shows
-3. Button to select the show
-4. Once show is selected, the user is taken to another page that displays a departing message and the show details
+1. Landing page of a list of shows that are stored in the backend of the database
+2. Users can select a show from the current list of shows
+3. When a show is selected, via the Select Show button, they will be taken a Show Details with the all the show's details of Name, Date, Time, and Price and a departing message of "Enjoy the Show"
+4. They can return to Theatre Events main page by clicking the "Back" button underneath the departing message
+5. If users do not see the show they want, they have an opportunity to request a show via the Request Show button at the bottom of the landing page that is sitting underneath the list of shows
+6. If they change their mind and do not want to request a show, they can return to the Theatre Events main page by clicking the back button that is location underneath the form
+
 
 ## Implementation Plan - Part A: Design
 ---
