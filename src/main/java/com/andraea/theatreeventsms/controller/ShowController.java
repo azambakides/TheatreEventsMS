@@ -16,14 +16,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class ShowController {
 
     @Autowired
-    private ShowRepository showRepository;
-
-    @Autowired
     private ShowService showService;
 
     @GetMapping("/TheatreEvents")
     public String viewHomePage(Model model) {
-        model.addAttribute("showList", showRepository.findAll());
+        model.addAttribute("showList",showService.getAllShows());
         return "index";
     }
 
@@ -42,7 +39,7 @@ public class ShowController {
     @PostMapping("/requestShow")
     public String showSubmit(Model model, @ModelAttribute Show show) {
         showService.saveOrUpdate(show);
-        model.addAttribute("showList", showRepository.findAll());
+        model.addAttribute("showList", showService.getAllShows());
         return "index";
     }
 }

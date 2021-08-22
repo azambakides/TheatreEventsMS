@@ -1,6 +1,7 @@
 package com.andraea.theatreeventsms.controller;
 
 import com.andraea.theatreeventsms.repository.ShowRepository;
+import com.andraea.theatreeventsms.service.ShowService;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -26,12 +27,15 @@ class ShowControllerTest {
     @MockBean
     private ShowRepository showRepository;
 
+    @MockBean
+    private ShowService showService;
+
     @Test
     void inputSubmit() throws Exception {
         ResultActions resultActions = mockMvc.perform(MockMvcRequestBuilders.get("/TheatreEvents"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("TheatreEvents"))
-                .andExpect(model().attribute("show", Matchers.notNullValue()));
+                .andExpect(view().name("index"))
+                .andExpect(model().attribute("showList", Matchers.notNullValue()));
 
         MvcResult mvcResult = resultActions.andReturn();
         ModelAndView mv = mvcResult.getModelAndView();
