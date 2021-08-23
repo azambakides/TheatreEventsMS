@@ -30,7 +30,7 @@ For Part B of the Capstone Project, I learnt that these are the requirements are
 ## Planning
 
 ---
-**Sunday**:
+**Sunday:**
 
 * Ensure all MS requirements are available and in order before beginning development
 * Generate SpringBoot project via IntelliJ IDEA IDE:
@@ -39,7 +39,7 @@ For Part B of the Capstone Project, I learnt that these are the requirements are
   * Add dependencies of _Spring Web_, _H2 Database_, and _JPA_
 * Share on GitHub with a new repository direct from IntelliJ, so that it is easy to make commits
 
-**Monday** 
+**Monday:** 
 
 * Double-check the dependencies, and add any if needed, such as _Thymeleaf_
 * Start adding to Documentation of README.md
@@ -66,7 +66,7 @@ For Part B of the Capstone Project, I learnt that these are the requirements are
    * Create a Thymeleaf template with `index.html`, which allows endpoint to display with table of Show Name, Show Date, Show Time, and Price, which will be mapped by Controller
    * Think about what should be stored in the H2 Database: a list of shows with time, date, and price?
 
-**Tuesday**
+**Tuesday:**
 
 * Sketch a wireframe (a sketch of a screen blueprint) to plan a basic map of the front-end's main landing page
 * Think of how the page should look: should the data be a drop-down on the front end? Could users click on a show to see more details?
@@ -74,7 +74,7 @@ For Part B of the Capstone Project, I learnt that these are the requirements are
 * Begin preparing the presentation
 *  Start adding to Documentation of README.md to add to the Implementation plan as I go along
 
-**Wednesday** 
+**Wednesday:** 
 
 * Add Bootstrap, HTML, and CSS to `index.html` to get the design implemented into the project, including background image, typefaces, and colours
 * Give the endpoint a name that relates to the theme: http://localhost:8081/TheatreEvents
@@ -82,7 +82,7 @@ For Part B of the Capstone Project, I learnt that these are the requirements are
 * Add second `@GetMapping` in _ShowController_ for show details and create a new HTML file of `showDetails.html` so that users can see all the show details along with a parting message of "Enjoy the show"
 
 
-**Thursday**
+**Thursday:**
 
 * Create a ShowService class and ShowServiceImp interface in the Service package to allow user input to go into the database and added to the ShowController with `@PostMapping` and four methods of in the Interface of:
   * `getAllShows()`
@@ -93,7 +93,7 @@ For Part B of the Capstone Project, I learnt that these are the requirements are
 * Add a _requestShow_ page with `requestShow.html`for the users to request a show they wish to see, and add a `@PostMapping` in ShowController to enable it, and add a button in `index.html` to take users to the new page to request a show. Any shows added will be stored in the H2 Database and added to the list of shows already displaying in http://localhost:8081/TheatreEvents
 * Add an interactive form in `requestShow.html` to make it easy for users to request a show, while initializing Bootstrap, HTML, and CSS to get the design implemented into the project, including background image, typefaces, and colours
 
-**Friday**
+**Friday:**
 
 * Ensure that the design is all consistent throughout the MS, and that it runs well with the shows displaying correctly
 * Develop three JUnit tests to make sure that the MS is working correctly in Controller and ShowServiceImpl
@@ -116,7 +116,7 @@ The MS addresses the business problem of users of scrolling down a long-list of 
 
 As an extra bonus with this website, users can request a show that they may be interested in, thus inputting a proposed show with an ideal time, date, and a price they would be willing to pay. This is different for usual theatre websites, which often just requires the user to choose only shows that are available already. Therefore, it provides a new Unique Selling Point (USP) and fills a gap in the market. A feature like this will make the user feel excited and more empowered about their position of consumerism. Users can request a show on the Request Show page that they can access by clicking on the "Request Show" button on the bottom of the landing page, underneath the list of shows.
 
-**The target audience**
+**The target audience:**
 
 The target audience of this MS are culture-lovers and fans of theatre, who make visits to the theatre part of their free time. Furthermore, they are also keen Internet users, and they would appreciate a user-friendly website where they were presented a list of shows straightaway without having to scroll through a never-end list. They will love the feature where they can request a show, as not many theatre-loving, Internet users get that opportunity.
 
@@ -202,23 +202,27 @@ This is a flowchart that demonstrates the design of the MS. To keep with the the
 ---
 |Step| Process / Task | Particulars / Files / Fields | Comments |
 |----|-----------------|---------|----------|
-|1   | Create files and repository direct from IntelliJ IDEA after setting up "New Project" with Spring Initializer using Maven, and create a README.md from scratch | .gitnore, .mvn/wrapper, README.md, mvnw, pom.xml, application.properties, TheatreEventsApplicationTests | Chose the dependencies of Spring Web, H2, and JPA, so that the microservice will be a Spring app connecting to the Database |
-|2 | Double-check dependencies and add any new ones, if needed | pom.xml | Added the Thymeleaf dependency |
-|3 | Create the Model and add @Entity to store objects to the database with Model and Repository packages, new information in README.md | Show.java (@Id, @GeneratedValue, Getters/Setters), showRepository (@Repository), application.properties (setting up h2 database) index.html (Thymeleaf), TheatreEventsApplication.java (@public static main) | Store list of shows with dates, times, price and store the user inputs | 
-| 4 | Create a Controller in the Controller package | Controller: ShowController.java (@Controller, @GetMapping) | Make a simple endpoint to start with http://localhost:8081/ and a database with http://localhost:8081/h2-console/|
-|5 | Create a Thymeleaf template in index.html | /h2-console, table of ShowList with @{/addShow}, BootStrap | Allow endpoint to display |
-| 6| Think about what should be stored in the database | | List of shows with time, date, and price? Should it be drop-down? Could users click on a link of a show to see details?
-| 7 | Make a sketch of an initial visual idea, and design a front-end visualization in [Canva](https://www.canva.com/) | | Theatre curtains? Site name and welcome? Menu? User input? Drop down menu?|
-| 8 | Add PNG of visualisation to the file, and embed under the Visualisation heading, continuing updating README.md with text on Statement of Purpose, Features, and Visualisation | README.md | Use the correct headings, bold text, embedding, tables, and links |
-|9|Give endpoint a name for direction | |http://localhost:8081/TheatreEvents |
-| 10| Make the end point only display show name first and a select button and a separate page to display all show details when user selects a show name | Added a second @GetMapping in ShowController for show details and showDetails.html for the show details | Primitive at this stage, but will think on how to do the design - only three shows displaying too |
-|11| Revert to previous idea of show details displaying on second page after user clicking "select show" and decided to keep all show details on landing page instead | index.html,  |  |
-|12| Begin designing the landing page of show details | index.html, Bootstrap, CSS | Imported an image of the same blue theatre curtains in the Visualisation into newly made img directory, and tried to link it to index.html |
-|13| Add photo of the initial front-end sketch to demonstrate mental journey of visual plan| | Import to img folder as png, along with the Canva design |
-|14| Add the background image and CSS to index.html file | index.html, CSS, Bootstrap, HTML | URL image was linked directly to theatre curtains on Pixabay, instead of the .png in the img folder |
-|15| Create a ShowService class, and ShowServiceImpl and include methods and functions so that it connects the user interaction back to the database | Service: ShowService and ShowServiceImpl | 
-| 16 | Create a requestShow.html, so that users can request a show via a user input form. Add @GetMapping and @PostMapping to the ShowController for requestShow, so that every time the input goes through, it connects back to the database and logs the requested show details | ShowController: @GetMapping, @PostMapping; requestShow.html| |
-| 17 | Ensure all pages are consistent in design |||
+|1   | Create files and repository direct from IntelliJ IDEA after setting up "New Project" with Spring Initializer using Maven, and create a README.md from scratch | .gitnore, .mvn/wrapper, README.md, mvnw, pom.xml, application.properties, TheatreEventsApplicationTests | Chose the dependencies of _Spring Web_, _H2_, and _JPA_, so that the microservice will be a Spring app connecting to the Database |
+|2 | Double-check dependencies and add any new ones, if needed | pom.xml | Added the _Thymeleaf_ dependency, so that the webpages display at the endpoint |
+|3 | Create the ``Model`` class and add ``@Entity`` to store objects to the database, and link with the Model and Repository packages to get the project going | Show.java (``@Id``, ``@GeneratedValue``, Getters/Setters), ``showRepository`` (``@Repository``), application.properties (setting up H2 Database) ``index.html`` (Thymeleaf), ``TheatreEventsApplication``(``@public static main``) |Enter new information in ``README.md`` as I go along for easier documentation |
+| 4 | Create a Controller in the ``Controller`` package to make a simple endpoint, and add list of shows with dates, times, price to store the user inputs in the H2 Database  | Controller: ``ShowController``.java (``@Controller``, ``@GetMapping``) | Make a simple endpoint to start with in http://localhost:8081/ and an H2 Database with http://localhost:8081/h2-console/|
+|5 | Create a Thymeleaf template in ``index.html`` to begin implementing the design | /h2-console, table of ShowList with ``@{/addShow}``, BootStrap | Allow endpoint to display on the app's landing page  |
+| 6| Think about what should be stored in the database. ID? List of shows with Name, Time, Date, and Price?  | | Further thoughts: should it be drop-down? Could users click on a link of a show to see details?
+| 7 | Make a wireframe of an initial visual idea, and design a front-end visualization in [Canva](https://www.canva.com/) | | Further thoughts: Theatre curtains? Site name and welcome? Menu? User input? Drop down menu?|
+| 8 | Add PNG of visualisation to the ``README.md``, and embed under the Visualisation heading, continuing updating README.md with text on Statement of Purpose, Features, and Visualisation | README.md | Use the correct headings, bold text, embedding, tables, and links |
+|9|Give endpoint a name for easier direction: `TheatreEvents` | |http://localhost:8081/TheatreEvents |
+| 10| Try to make the end point only display Show Name first and a "Select Show" button and a separate page of `selectShow` to display all show details when user clicks on the button, which displays by ID: eg. `selectShow/1`, if the user selects the first how| Added a second ``@GetMapping`` in ``ShowController`` for ``showDetails.html `` for the show details | Primitive at this stage, but will think on how to do the design - only three shows displaying at the moment that were entered directly in the H2 Database |
+|11| Revert to previous idea of all show details displaying on `selectShow` after user clicking "Select Show" and decided to keep all show details on ``TheatreEvents``instead with the "Select Show" button | ``index.html``, ``showDetails.html`` | Played around with the HTML to make the table and make it less obvious that it's a table and more cohesive to the design |
+|12| Begin designing `TheatreEvents` and `selectShow` pages with tables for user interaction. Added a "Back" button on the `selectShow` page, so users could return to `TheatreEvents` easily  | ``index.html`` and `showDetails.html` with Bootstrap, HTML, and CSS | Imported an image of the same blue theatre curtains in the Visualisation into newly made ``.img ``directory, and tried to link it to ``index.html ``|
+|13| Add photo of the initial front-end sketch to demonstrate mental journey of visual plan| | Import to ``.img`` folder as png, along with the Canva design |
+|14| Add the background image and CSS to index.html file to display on the `TheatreEvents` and `selectShow` pages and design as closely as possible to visualisation and experiment with colours of typefaces | ``index.html``, ``showDetails.html``  with Bootstrap, HTML, and CSS | URL image was linked directly to a theatre curtains stock-free photo on [Pixabay](https://pixabay.com/photos/theatre-movie-theater-curtain-strip-2757802/), instead of the ``.png`` that was originally in the img folder |
+|15| Create a ``ShowService`` class, and ``ShowServiceImpl`` in the `Service` and include methods and functions so that it connects the user interaction back to the database | Service: ``ShowService`` and ``ShowServiceImpl``| At the last minute, I felt it was imperative to have more user interaction that what there was already and make the app feel a bit more complete|
+| 16 | Create a ``requestShow.html``, so that users can request a show via a user input form. Add `@GetMapping `and `@PostMapping` to the `ShowController` for `requestShow`, so that every time the input goes through, it connects back to the database and logs the newly-requested show details | `ShowController:` `@GetMapping`, `@PostMapping`; `requestShow.html` with Bootstrap, HTML, and CSS| I want to give the app an opportunity of user input and output at http://localhost:8081/requestShow, rather than myself logging the shows in the database and to give the app a Unique Selling Point (USP) of requesting a show|
+| 17 | Change the `ShowController`'s `@GetMapping` and `@PostMapping` so the `Service` links with the `Controller` with the `Repository `by `@` with `ShowService` instead of `ShowRepository` to ensure that the app will run successfully | `ShowController:` `@GetMapping`, `@PostMapping` | Really changed the gear my implementing the `Service` packages instead of relying on the `Model` and `Repository` linking together by themselves |
+|18| Ran three successful tests: two in `ShowServiceImplTest` testing code from the `ShowServiceImpl` and one in `ShowControllerTest` testing the `ShowController`| Tests: `ShowServiceImplTest`, ``ShowControllerTest``  | Set ``TheatreEventsMsApplicationTests`` back to original code of test, but it is not tested as there is no test to run
+| 19 | Ensure all pages are consistent in design with the same coloured headers, subheadings, main text, buttons | `TheatreEvents.html`, `ShowDetails.html`, `RequestShow.html` with Bootstrap, HTML, CSS||
+| 20| Finish updating the `README.md` with as much detail as possible in all sections with teh correct headings | | Think of this documentation being rea by a child, who knows nothing about coding and design!|
+|21| Design a the final presentation in PowerPoint in Canva and present to whole cohort | | Downloaded the presentation in PDF,and tried to convert to `.ppt`, which failed to implement the design with the design, Submitting in PDF. |
 
 
 ## Final Front-end of the Theatre Events MS App:
