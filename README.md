@@ -104,7 +104,9 @@ For Part B of the Capstone Project, I learnt that these are the requirements are
 ---
 **What this Microservice will do:**
 
-The aim of this MS app is to create an SpringBoot application that will store a list of shows with their details of name, date, time, and price in an H2 Database. This list will be sent to display in a user-friendly, and visually-pleasing, Spring Web front-end Theatre Events webpage that enables user interaction with good User Experience (US). With the front-end webpage, the user can select one of the theatre shows from the list with ease. 
+The aim of this MS app is to create a SpringBoot application that stores a list of shows with their ID, name, date, time, and price in an H2 Database that will be sent to a front-end Spring Web landing page via a Controller than maps the Thymeleaf template of HTML & CSS with Bootstrap.
+
+Next, the database list will be sent to display in a user-friendly, and visually-pleasing, Spring Web front-end Theatre Events webpage that enables user interaction with good User Experience (US). With the front-end webpage, the user can select one of the theatre shows from the list with ease. 
 
 Differing from Part A of this project, instead of being given a list of the available shows when the one the user wishes to see is not available, the user will be able to request a show instead with the proposed show name, with their ideal date, time, and price. This information will be sent back to the H2 Database for storage and will be displayed on the main page, joining the list of already-lined up shows.
 
@@ -123,34 +125,77 @@ The target audience of this MS are culture-lovers and fans of theatre, who make 
 ---
 These are the features of the Theatre Events MS:
 
-1. Landing page of a list of shows that are stored in the backend of the database
-2. Users can select a show from the current list of shows
-3. When a show is selected, via the Select Show button, they will be taken a Show Details with the all the show's details of Name, Date, Time, and Price and a departing message of "Enjoy the Show"
-4. They can return to Theatre Events main page by clicking the "Back" button underneath the departing message
-5. If users do not see the show they want, they have an opportunity to request a show via the Request Show button at the bottom of the landing page that is sitting underneath the list of shows
-6. If they change their mind and do not want to request a show, they can return to the Theatre Events main page by clicking the back button that is location underneath the form
+1. A main, landing page of a list of initial shows with ID and details of Name, Date, Time, and Price in `TheatreEvents`
+   * _The list of shows is stored in the backend with the H2 Database_
+2. Users can select a show that hovers over the details for highlighting and easy selection 
+   * _The list of shows are stored in an HTML hover table, so it is easier for users to see which show they are choosing_
+3. When users select a show via the "Select Show" button, they will be taken to a `ShowDetails` page with the all the show's details of Name, Date, Time, and Price and a departing message of "Enjoy the Show"
+   * _I added this pleasant feature to make the user feel appreciated for selecting a show_
+   * _Plus, it is always lovely to receive an "Enjoy the show" message when one goes to see a show, and it is a good, final message_
+4. To return to `TheatreEvents` main page, users can click the "Back" button underneath the departing message 
+   * _The back button makes it for easy UX experience to return to the main page_
+5. If users do not see the show they want, they have an opportunity to request a show, via the "Request Show" button , which is available underneath the list of shows 
+   * _This is the best feature of all because of the unique opportunity to request a show, which  fills a gap in the market_
+   * _Not many theatre booking websites offer this feature, thus this presents a feature that theatre websites could implement in the future_
+6. To request a show, the user is taken to the `RequestShow` page, and they can input a proposed show name with ideal date, time, and price in the form and click the "Submit" button 
+   * _I created a Bootstrap form for easy input that is clear and easy to use, hile still staying with the gold theatre theme_
+7. Once the requested show has been submitted, the user is taken back to the `TheatreEvents` page, where the output of the new show is displayed at the bottom of the show list with a new ID that has been generated
+   * _I would have liked to have also created another page that says "Thank you for your request - it has been submitted for consideration" before heading back to `TheatreEvents` but due to time constraints of this project, it was not possible_
+8. If users change their mind on `Request Show`and decide that they do not want to make a request, they can return to the `Theatre Events` main page by clicking the "Back" button that is located underneath the form
+   * _I felt that this was a good option to give the user, as one may change their mind at the last minute. Instead of them being stuck with no way of navigation, I added this for good UX with ease of use of the app_
 
 
 ## Implementation Plan - Part A: Design
+
 ---
+The Implementation Plan split into two part: Design and Programming. They worked side by side as the app was being implemented step by step. By thinking of the design, it made it easier to know what to code to what I wanted to the endpoint to look like.
+
+While I was setting up the files, I made a wireframe (a sketch of a screen blueprint), which the creative process of this MS application:
+
 ![sketchMS](src/main/resources/img/sketchMS.png)
 
-To start off with ... his was my initial wireframe that began my visualisation.
-
-I had a vision of the theatre curtains, and a welcome message displayed on the top with the app name. Underneath, I wanted there to be a UI-term of a hamburger menu with four separate drop-down choice of:
+The idea came to me while I was drifting in and out of sleep. I had a vision of the theatre curtains in the background, and a welcome message displayed on the top with the app name. Underneath, I wanted there to be a User Interface (UI) a hamburger menu with four separate drop-down choice of:
 
 1. Show name
 2. Show date
 3. Show time
 4. Finalised details with the price
+ 
+Continuing on from Part A, I also wanted an option underneath for the user if they do not find the show they want, so they can look at a list of shows available.
 
-I also wanted an option underneath for the user if they do not find the show they want, so they can look at a list of shows available.
+To assist myself with a visual aim of how the front-end will look for the user, I created a design in [Canva](https://www.canva.com/), which helped to solidify my ideas more:
 
 ![SpringBootDesign](src/main/resources/img/SpringBootDesign.png)
 
-To assist myself with a visual aim of how the front-end will look for the user, I created a design in [Canva](https://www.canva.com/), which helped to kickstart the creative process of this SpringBoot application.
+However, the creative process changed with how I visualised the microservice to be like to how I was able to implement it with my Java skills. 
 
-However, the creative process changed with how I visualised the microservice to be like to how I was able to implement it with my skills. Instead, I used a table to list my shows, which the user could select from.
+However, not being able to implement the hamburger menu, and having to use a table instead, the biggest challenge in this creative process was getting the background. As there were many aspects in the `index.html` that one could use to get the background up. Eventually after much searching on Bing.com, I found a tutorial on backgrounds with [Bootstrap](https://startbootstrap.com/snippets/full-image-background). As a result, I managed to get background like this with the table nestled in between the curtains, as displayed on my monitor. This was my initial display:
+
+![first_layout_with_background.png](src/main/resources/img/first_layout_with_background.png)
+
+Furthermore, I didn't want my table to look too much like a table, so I tried to make it as transparent as possible. I included the feature of the table hovering, so it would be easier for users to see which show they were picking. I also wanted the typefaces to be in a consistent colour theme that reflected the curtains and the magic of the theatre:
+
+![redesigned_table.png](src/main/resources/img/redesigned_table.png)
+
+I also created `ShowDetails` page, which the user goes to once they click on the "Select Show" that displays all the details of the show (minus the ID) and a departing message of "Enjoy the show". Later, I added the Dollar ($) so that it looks more consistent in the design. Furthermore, the users can return to the `TheatreEvents` page with the "Back" button underneath the departing message:
+
+![first_show_details_page.png](src/main/resources/img/first_show_details_page.png)
+
+Originally, the design was just going to be the `TheatreEvents` page and the `ShowDetails` page only linking together with the list input in the H2 Database by myself. 
+
+But at the last minute, I began to feel an extra page giving a special features would be beneficial to this project where the user can give an input a show themselves, instead of just clicking on "Select Show" and "Back" buttons. So, I created, and designed, a `Request Show` page where the user can request a show, which is a unique feature. Here, I created Bootstrap table where the user could propose the new show, along with ideal date, time, and price with a "Submit" button, which was later designed better to be cohesive with the theme: 
+
+![Inital_Request_Show_Page.png](src/main/resources/img/Inital_Request_Show_Page.png)
+
+I also included a "Back" button in case the user changed their mind about requesting, and wanted to return to `TheatreEvents` to select an already-available show instead. And I designed the app so that the same "Back" button be available on every page, so that the user had choice, and were able to navigate the app. I also had another huge challenge with the buttons because the button in Thymeleaf would not style as I wished it to, so after much searching, I had to use Bootstrap only, which made my design tasks much easier.
+
+## Flowchart of the Design of the MS
+
+---
+
+This is a flowchart that demonstrates the design of the MS. To keep with the theme of the theatre, instead of little boxes that depict the flow, I used theatre tickets
+
+![Theatre Events MS Flowchart](src/main/resources/img/Theatre Events MS Flowchart.png)
 
 ## Implementation Plan - Part B: Programming
 
@@ -174,3 +219,19 @@ However, the creative process changed with how I visualised the microservice to 
 |15| Create a ShowService class, and ShowServiceImpl and include methods and functions so that it connects the user interaction back to the database | Service: ShowService and ShowServiceImpl | 
 | 16 | Create a requestShow.html, so that users can request a show via a user input form. Add @GetMapping and @PostMapping to the ShowController for requestShow, so that every time the input goes through, it connects back to the database and logs the requested show details | ShowController: @GetMapping, @PostMapping; requestShow.html| |
 | 17 | Ensure all pages are consistent in design |||
+
+
+## Final Front-end of the Theatre Events MS App:
+
+---
+The `TheatreEvents` landing page:
+
+![Theatre_Events_Final.png](src/main/resources/img/Theatre_Events_Final.png)
+
+The `ShowDetails`page when user selects a show:
+
+![Show_Details_Final.png](src/main/resources/img/Show_Details_Final.png)
+
+The `RequestShow` page for when a user can request a show via form input:
+
+![Request_Show_Final.png](src/main/resources/img/Request_Show_Final.png)
