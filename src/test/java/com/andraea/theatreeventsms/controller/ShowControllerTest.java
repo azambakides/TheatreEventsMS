@@ -31,7 +31,7 @@ class ShowControllerTest {
     private ShowService showService;
 
     @Test
-    void inputSubmit() throws Exception {
+    void test_inputSubmit() throws Exception {
         ResultActions resultActions = mockMvc.perform(MockMvcRequestBuilders.get("/TheatreEvents"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("index"))
@@ -40,4 +40,5 @@ class ShowControllerTest {
         MvcResult mvcResult = resultActions.andReturn();
         ModelAndView mv = mvcResult.getModelAndView();
     }
+
 }
